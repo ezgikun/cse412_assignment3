@@ -2,8 +2,7 @@
 
 ## 📝 Project Overview
 
-This repository contains the solution for the BYM412 Robotics Course's third assignment. [cite\_start]The objective of this project was to develop a **three-node ROS 2 Humble application** written in Python, containerize the entire system using **Docker**, and demonstrate full functionality—including continuous data publishing and custom service handling—from within the isolated Docker environment[cite: 17].
-
+This repository contains the solution for the BYM412 Robotics Course's third assignment. The objective of this project was to develop a **three-node ROS 2 Humble application** written in Python, containerize the entire system using **Docker**, and demonstrate full functionality—including continuous data publishing and custom service handling—from within the isolated Docker environment.
 The system architecture features a **Publisher-Subscriber** data pipeline complemented by a **Service Server** for interactive control and status checks.
 
 ## ✨ Key Features & Requirements
