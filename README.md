@@ -10,19 +10,19 @@ The system architecture features a **Publisher-Subscriber** data pipeline comple
 
 The application successfully implements the following core functionalities as required by the assignment:
 
-  * [cite\_start]**Three ROS 2 Nodes (Python):** `sensor_publisher`, `data_processor`, and `command_server`[cite: 20].
-  * [cite\_start]**Custom Service Interface:** Implementation of a custom service (`ComputeCommand.srv`) defined to accept a `float64` input and return a `string` output[cite: 42, 43, 44].
-  * [cite\_start]**Service Logic:** The `command_server` uses threshold logic: **`input > 10` → "HIGH"** and **`input <= 10` → "LOW"**[cite: 45, 46, 47].
-  * [cite\_start]**Single Launch File:** All three nodes are launched simultaneously using `my_project.launch.py`[cite: 62].
-  * [cite\_start]**Full Containerization:** The entire application is built, configured, and executed using a single `Dockerfile` and `entrypoint.sh` on the `ros:humble-ros-base` image[cite: 76].
+  * **Three ROS 2 Nodes (Python):** `sensor_publisher`, `data_processor`, and `command_server`.
+  * **Custom Service Interface:** Implementation of a custom service (`ComputeCommand.srv`) defined to accept a `float64` input and return a `string` output.
+  * **Service Logic:** The `command_server` uses threshold logic: **`input > 10` → "HIGH"** and **`input <= 10` → "LOW"**.
+  * **Single Launch File:** All three nodes are launched simultaneously using `my_project.launch.py`.
+  * **Full Containerization:** The entire application is built, configured, and executed using a single `Dockerfile` and `entrypoint.sh` on the `ros:humble-ros-base` image.
 
 ## 🧠 Node Descriptions and Data Flow
 
 | Package Name | Executable | Type | Responsibility / Data Flow |
 | :--- | :--- | :--- | :--- |
-| `sensor_publisher_pkg` | `sensor_publisher` | Publisher | [cite\_start]Publishes synthetic sensor data (random `Float32` values) to the **`/sensor_value`** topic every 0.1 seconds (10 Hz)[cite: 22, 23, 25]. |
-| `data_processor_pkg` | `data_processor` | Subscriber/Publisher | [cite\_start]Subscribes to **`/sensor_value`**, processes the data (multiplies by 2), and publishes the result to **`/processed_value`**[cite: 31, 32, 33, 35]. |
-| `command_server_pkg` | `command_server` | Service Server | [cite\_start]Implements the **`/compute_command`** service, listening for requests using the custom `ComputeCommand` service type[cite: 40, 41, 42]. |
+| `sensor_publisher_pkg` | `sensor_publisher` | Publisher | [cite\_start]Publishes synthetic sensor data (random `Float32` values) to the **`/sensor_value`** topic every 0.1 seconds (10 Hz) |
+| `data_processor_pkg` | `data_processor` | Subscriber/Publisher | [cite\_start]Subscribes to **`/sensor_value`**, processes the data (multiplies by 2), and publishes the result to **`/processed_value`**. |
+| `command_server_pkg` | `command_server` | Service Server | [cite\_start]Implements the **`/compute_command`** service, listening for requests using the custom `ComputeCommand` service type. |
 
 ## 📁 Project Structure
 
@@ -44,7 +44,7 @@ cse412_a3/
 
 ## 🛠️ Setup and Installation (Using Docker)
 
-The host machine only requires **Docker** to be installed. [cite\_start]ROS 2 installation on the host is **not required**[cite: 91].
+The host machine only requires **Docker** to be installed. [cite\_start]ROS 2 installation on the host is **not required**.
 
 ### Prerequisites
 
@@ -71,7 +71,7 @@ docker build -t myrosapp .
 
 ### Step 3: Run the Container
 
-[cite\_start]The container is configured to automatically source the ROS environment and execute the launch file (`my_project.launch.py`) via the `entrypoint.sh` script when it starts[cite: 79, 85].
+[cite\_start]The container is configured to automatically source the ROS environment and execute the launch file (`my_project.launch.py`) via the `entrypoint.sh` script when it starts.
 
 ```bash
 # Run the container (use --rm to clean up when stopped)
@@ -84,7 +84,7 @@ docker run --rm myrosapp
 
 ## ✅ Usage and Verification
 
-[cite\_start]All verification steps must be performed in a separate terminal **inside the running Docker container**[cite: 90].
+All verification steps must be performed in a separate terminal **inside the running Docker container**.
 
 ### Step 1: Access the Container Shell
 
@@ -120,7 +120,7 @@ ros2 topic list
 ```
 
 #### 2\. Verify Data Flow and Processing
-
+i
 Confirms that the `data_processor` is subscribing to the raw data and publishing the processed (multiplied by 2) result.
 
 ```bash
@@ -146,7 +146,7 @@ ros2 service call /compute_command custom_interfaces/ComputeCommand "input: 12.5
 
 This project repository and associated report fulfill the following deliverables:
 
-  * [cite\_start]**Source Code, Dockerfile, and Launch File** [cite: 118, 119, 120]
-  * [cite\_start]**README** and **`SSF_HASH.txt`** [cite: 121, 122]
-  * [cite\_start]**PDF Report** (`A3_<StudentID>_<NameSurname>.pdf`) [cite: 116]
-  * [cite\_start]**YouTube Video Link** (Unlisted) [cite: 123]
+  * **Source Code, Dockerfile, and Launch File** 
+  * **README** and **`SSF_HASH.txt`**
+  * **PDF Report** (`A3_<StudentID>_<NameSurname>.pdf`)
+  * **YouTube Video Link** (Unlisted)
