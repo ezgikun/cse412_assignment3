@@ -148,4 +148,4 @@ This project repository and associated report fulfill the following deliverables
   * **Source Code, Dockerfile, and Launch File** 
   * **README** and **`SSF_HASH.txt`**
   * **PDF Report** (`A3_<StudentID>_<NameSurname>.pdf`)
-  * **YouTube Video Link** (Unlisted)
+  * **YouTube Video Link** (Unlisted):  https://youtu.be/4HVlQApoMg4
